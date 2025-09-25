@@ -1,0 +1,66 @@
+/* ตั้งค่า body ให้มินิมอลและกลางหน้าจอ */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f5;
+}
+
+/* กล่องเครื่องคิดเลข */
+.calculator {
+  background-color: #fff;
+  padding: 25px 20px;      /* พอดี ไม่ใหญ่เกินไป */
+  border-radius: 20px;      /* มุมโค้งสวย */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* เงาเบาๆ */
+  width: 300px;             /* กำหนดความกว้างพอดี */
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.calculator:hover {
+  transform: translateY(-3px);  /* effect เล็กเวลาชี้ */
+}
+
+/* ช่องกรอกเลข */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+/* ปุ่มคำนวณ */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: #4c6ef5;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #3b5bdb;
+}
+
+/* แสดงผลลัพธ์ */
+.result {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+#result {
+  color: #1c7ed6;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>โปรแกรมเครื่องคิดเลข บวกลบคูณหาร</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <input
+        type="text"
+        id="expression"
+        placeholder="กรอกเลข เช่น 10-2+5*4/5"
+        inputmode="numeric"
+        pattern="[0-9+\-*/]*"
+      />
+      <button onclick="calculateInput()">คำนวณ</button>
+      <div class="result">
+        <span id="result">ผลลัพธ์จะปรากฏที่นี่</span>
+      </div>
+    </div>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
