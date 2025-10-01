@@ -20,10 +20,8 @@ function calculate(expression) {
   // Loop ผ่านทุก token
   for (let token of tokens) {
     if (!isNaN(token)) {
-      // ตัวเลข → push ลง numStack
       numStack.push(parseFloat(token));
     } else {
-      // operator → check precedence กับ stack
       while (opStack.length && precedence[opStack[opStack.length-1]] >= precedence[token]) {
         const b = numStack.pop();
         const a = numStack.pop();
@@ -33,16 +31,12 @@ function calculate(expression) {
       opStack.push(token);
     }
   }
-
-  // คำนวณ operator ที่เหลือ
   while (opStack.length) {
     const b = numStack.pop();
     const a = numStack.pop();
     const op = opStack.pop();
     numStack.push(applyOp(a, b, op));
   }
-
-  // ผลลัพธ์สุดท้าย dynamic จาก stack
   return numStack[0];
 }
 
@@ -55,8 +49,6 @@ function calculateInput() {
   const result = calculate(expr);
   document.getElementById('result').textContent = result;
 }
-
-// ป้องกันการพิมพ์ตัวอักษรที่ไม่ใช่ 0-9 + - * /
 const inputField = document.getElementById('expression');
 inputField.addEventListener('keypress', function(e) {
   if (!'0123456789+-*/'.includes(e.key)) e.preventDefault();
